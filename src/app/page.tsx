@@ -8,7 +8,19 @@ interface Media {
   url?: string;
   filename?: string;
   mimeType?: string;
-  // añade otros campos si los necesitas
+  cloudinary?: {
+    public_id: string;
+    resource_type: string;
+    format: string;
+    secure_url: string;
+    bytes: number;
+    created_at: string;
+    version: number;
+    version_id: string;
+    width: number;
+    height: number;
+    selected_page: number;
+  };
 }
 
 interface Product {
@@ -48,12 +60,12 @@ export default function Home() {
         {products.map((p) => (
           <li key={p.id} className="flex gap-5 items-start justify-center">
             <div className="border w-[150px] aspect-[3/4] relative overflow-hidden rounded-sm">
-              {p.images?.[0]?.image?.url && (
+              {p.images?.[0]?.image?.cloudinary?.secure_url && (
                 <Image
-                  src={p.images[0].image.url}
+                  src={p.images[0].image.cloudinary.secure_url}
                   alt={p.name}
                   fill
-                  priority={true}
+                  priority={true} 
                   className="object-cover"
                 />
               )}
