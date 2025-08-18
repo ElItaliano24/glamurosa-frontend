@@ -31,6 +31,7 @@ export default function Home() {
         const res = await fetch("https://glamurosa-backend.vercel.app/api/products");
         const data = await res.json();
         setProducts(data.docs);
+        console.log(data)
         console.log(data.docs)
 
       } catch (error) {
