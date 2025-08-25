@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { nunito } from "@/lib/fonts";
 import "./globals.css";
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   title: "Glamurosa",
