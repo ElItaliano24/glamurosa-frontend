@@ -7,8 +7,12 @@ export default function Header() {
         <header className="bg-white py-4 h-[54px] flex items-center px-5 relative">
             <div className="lg:hidden">
                 <Hamburger toggled={isOpen} toggle={setOpen}size={24} />
-                { isOpen && (
-                    <nav className="fixed top-[54px] left-0 w-full bg-white py-4">
+                {isOpen && (
+                    <div className="fixed inset-0 bg-black/50 z-10" onClick={() => setOpen(false)}>
+
+                    </div>
+                )}
+                <nav className={`fixed top-[54px] left-0 w-4/5 bg-white py-4 transform transition-transform duration-300 ease-in-out z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"} `}>
                         <ul className="flex flex-col items-center space-y-4">
                             <li>
                                 <a href="#">Home</a>
@@ -21,9 +25,8 @@ export default function Header() {
                             </li>
                         </ul>
                     </nav>
-                )}
             </div>  
-            <h1 className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-widest">GLAMUROSA</h1>
+            <h1 className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-wides z-30">GLAMUROSA</h1>
         </header>
     );
 }   

@@ -58,7 +58,6 @@ export default function Home() {
     <div>
       <Header />
       <main className="bg-[#E1DFDB]">
-        <h1 className="font-bold text-3xl text-center py-2">PRODUCTOS</h1>
         <ul className="grid grid-cols-1 items-center justify-center gap-5 mx-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {products.map((p) => (
             <li key={p.id} className="flex gap-5 items-start justify-center">
