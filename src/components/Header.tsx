@@ -53,10 +53,10 @@ export default function Header() {
             </div>
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-wides z-30 lg:text-2xl" onClick={() => setOpen(false)}>GLAMUROSA</Link>
             <div className="absolute right-1 flex items-center">
-                <a href="https://www.tiktok.com/tuusuario" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tiktok.com/@glamurosa.pe" target="_blank" rel="noopener noreferrer">
                     <Image src="logo-tiktok.svg" alt="TikTok" width={30} height={30} />
                 </a>
-                <a href="https://www.instagram.com/tuusuario" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/glamurosa.pe/?hl=es" target="_blank" rel="noopener noreferrer">
                     <Image src="logo-instagram.svg" alt="Instagram" width={35} height={35} />
                 </a>
             </div>
