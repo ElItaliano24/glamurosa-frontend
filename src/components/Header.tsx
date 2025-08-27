@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Header() {
     const [isOpen, setOpen] = useState(false);
     return (
-        <header className="bg-white py-4 h-[54px] flex items-center px-2 relative">
+        <header className="bg-white py-4 h-[54px] flex items-center px-2 relative lg:h-[60px] lg:px-12 lg:justify-start">
             <div className="lg:hidden">
                 <Hamburger toggled={isOpen} toggle={setOpen} size={24} />
                 {isOpen && (
@@ -51,10 +51,38 @@ export default function Header() {
                     </ul>
                 </nav>
             </div>
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-wides z-30 lg:text-2xl" onClick={() => setOpen(false)}>GLAMUROSA</Link>
-            <div className="absolute right-1 flex items-center lg:right-10 lg:space-x-5">
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-wides z-30 lg:text-2xl lg:relative lg:transform-none lg:left-0 lg:translate-x-0" onClick={() => setOpen(false)}>GLAMUROSA</Link>
+            <ul className={`hidden lg:flex ml-5 space-x-2 tracking-wider text-md xl:space-x-10 xl:ml-10 ${instrumentSans.className}`}>
+                <li>
+                    <a href="#" className="flex justify-between items-center w-full h-full">
+                        CATEGORIA 1
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="flex justify-between items-center w-full h-full">
+                        CATEGORIA 2
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="flex justify-between items-center w-full h-full">
+                        CATEGORIA 3
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="flex justify-between items-center w-full h-full">
+                        CATEGORIA 4
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="flex justify-between items-center w-full h-full">
+                        CATEGORIA 5
+                    </a>
+                </li>
+                
+            </ul>
+            <div className="absolute right-1 flex items-center lg:right-10 lg:space-x-5 lg:static lg:ml-auto">
                 <a href="https://www.tiktok.com/@glamurosa.pe" target="_blank" rel="noopener noreferrer">
-                    <Image src="logo-tiktok.svg" alt="TikTok" width={30} height={30} className="lg:w-10 lg:h-10"/>
+                    <Image src="logo-tiktok.svg" alt="TikTok" width={30} height={30} className="lg:w-10 lg:h-10" />
                 </a>
                 <a href="https://www.instagram.com/glamurosa.pe/?hl=es" target="_blank" rel="noopener noreferrer">
                     <Image src="logo-instagram.svg" alt="Instagram" width={35} height={35} className="lg:w-12 lg:h-12" />
