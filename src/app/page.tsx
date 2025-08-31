@@ -59,7 +59,7 @@ export default function Home() {
     <div>
       <Header />
       <main className="bg-[#EFEFEF] py-5 md:py-10">
-        <ul className="grid grid-cols-2 gap-4 mx-2 md:grid-cols-3 md:mx-10 lg:grid-cols-4 xl:grid-cols-5 justify-items-center">
+        <ul className="grid grid-cols-2 gap-4 mx-2 sm:gap-6 md:grid-cols-3 md:mx-10 lg:grid-cols-4  lg:gap-16 xl:grid-cols-5 justify-items-center">
           {products.map((p) => (
             <li key={p.id} className="w-full h-full">
               <div className="w-full aspect-[3/4] relative overflow-hidden">
