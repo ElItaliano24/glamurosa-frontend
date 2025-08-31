@@ -58,11 +58,11 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <main className="bg-[#EFEFEF] py-5">
-        <ul className="grid grid-cols-2 gap-4 mx-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <main className="bg-[#EFEFEF] py-5 md:py-10">
+        <ul className="grid grid-cols-2 gap-4 mx-2 md:grid-cols-3 md:mx-10 lg:grid-cols-4 xl:grid-cols-5 justify-items-center">
           {products.map((p) => (
-            <li key={p.id}>
-              <div className="w-[142px] aspect-[3/4] relative overflow-hidden">
+            <li key={p.id} className="w-full h-full">
+              <div className="w-full aspect-[3/4] relative overflow-hidden">
                 {p.images?.[0]?.image?.cloudinary?.secure_url && (
                   <Image
                     src={p.images[0].image.cloudinary.secure_url}
@@ -73,12 +73,12 @@ export default function Home() {
                   />
                 )}
               </div>
-              <div className={`flex-1 text-xs ${instrumentSans.className}`}>
+              <div className={`flex-1 text-xs md:text-sm ${instrumentSans.className}`}>
                 <h2 className="mt-2 mb-1 tracking-widest text-center text-[#1C1C1C]">{p.name.toUpperCase()}</h2>
-                <p className="text-center mb-2 text-[#1C1C1CA6]">S/ {p.price}</p>
+                <p className="text-center mb-2 text-[#1C1C1CA6]">S/ {p.price.toFixed(2)}</p>
                 <a href={`https://wa.me/51980947986?text=${encodeURIComponent(
                   `Hola, estoy interesado en el producto "${p.name}" con precio S/ ${p.price}`
-                )}`} target="_blank" rel="noopener noreferrer" className="flex w-fit items-center justify-center gap-2 bg-[#189D0E] text-white font-semibold py-1 px-2 rounded mx-auto">
+                )}`} target="_blank" rel="noopener noreferrer" className="flex w-fit items-center justify-center gap-2 bg-[#189D0E] text-white font-semibold py-1 px-2 rounded mx-auto lg:py-2 lg:px-3">
                   <Image src="/logo-whatsapp.svg" alt="logo de WhatsApp" width={24} height={24} />
                   Consultar
                 </a>
