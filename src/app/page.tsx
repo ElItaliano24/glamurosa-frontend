@@ -88,7 +88,7 @@ export default function Home() {
           <section key={cat} id={cat.toLowerCase().replace(/\s+/g, '-')} className="mb-10">
             <h2 className="flex flex-col justify-center lg:w-1/4 mx-auto text-center font-bold lg:text-xl mb-5 lg:py-4 bg-white py-2">
               {cat.toUpperCase()}
-              <button  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="mx-auto flex text-xs items-center justify-center bg-[#EFEFEF] rounded w-fit px-2 py-1 lg:mt-3">
+              <button  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="mx-auto flex text-xs items-center justify-center bg-[#EFEFEF] rounded w-fit px-2 py-1 lg:mt-3 cursor-pointer">
                 <Image src="/flecha-hacia-arriba.png" className="mr-2" alt="logo de WhatsApp" width={24} height={24} />
                 <span>Regresar al inicio</span>
               </button>
