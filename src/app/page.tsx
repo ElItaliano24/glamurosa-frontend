@@ -42,7 +42,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch("https://glamurosa-backend.vercel.app/api/products");
+        const res = await fetch("https://glamurosa-backend.vercel.app/api/products?limit=100");
         const data = await res.json();
         setProducts(data.docs);
         console.log(data)
