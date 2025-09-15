@@ -26,38 +26,38 @@ export default function Header() {
                 <nav className={`fixed top-[54px] left-0 w-4/5 h-full bg-white py-4 transform transition-transform duration-300 ease-in-out z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"} `}>
                     <ul className={`flex flex-col items-center text-xs tracking-widest divide-y divide-gray-200 ${instrumentSans.className}`}>
                         <li className="h-14 w-full">
-                            <a href="#" className="pl-6 flex justify-between items-center w-full h-full">
+                            <a href="#basicos-en-rib" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
                                 BASICOS EN RIB
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
 
                         </li>
                         <li className="h-14 w-full">
-                            <a href="#" className="pl-6 flex justify-between items-center w-full h-full">
+                            <a href="#basicos-en-suplex" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
                                 BASICOS EN SUPLEX
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
                         </li>
                         <li className="h-14 w-full">
-                            <a href="#" className="pl-6 flex justify-between items-center w-full h-full">
+                            <a href="#chompas-y-chomperos" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
                                 CHOMPAS Y CHOMPEROS
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
                         </li>
                         <li className="h-14 w-full">
-                            <a href="#" className="pl-6 flex justify-between items-center w-full h-full">
+                            <a href="#sacos-y-conjuntos" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
                                 SACOS Y CONJUNTOS
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
                         </li>
                         <li className="h-14 w-full">
-                            <a href="#" className="pl-6 flex justify-between items-center w-full h-full">
+                            <a href="#pantalones" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
                                 PANTALONES
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
                         </li>
                         <li className="h-14 w-full">
-                            <a href="#" className="pl-6 flex justify-between items-center w-full h-full">
+                            <a href="#liquidaciones" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
                                 LIQUIDACIONES
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
@@ -68,32 +68,32 @@ export default function Header() {
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-wides z-30 lg:text-2xl lg:relative lg:transform-none lg:left-0 lg:translate-x-0" onClick={() => setOpen(false)}>GLAMUROSA</Link>
             <ul className={`hidden lg:flex items-center mx-5 gap-2 text-sm xl:tracking-wider xl:text-base xl:space-x-5 xl:ml-10 text-center ${instrumentSans.className}`}>
                 <li>
-                    <a href="#" className="h-full">
+                    <a href="#basicos-en-rib" className="h-full">
                         BASICOS EN RIB
                     </a>
                 </li>
-                <li>
-                    <a href="#" className="h-full">
+                <li >
+                    <a href="#basicos-en-suplex" className="h-full">
                         BASICOS EN SUPLEX
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#chompas-y-chomperos">
                         CHOMPAS Y CHOMPEROS
                     </a>
                 </li>
                 <li className="">
-                    <a href="#" className="h-full">
+                    <a href="#sacos-y-conjuntos" className="h-full">
                         SACOS Y CONJUNTOS
                     </a>
                 </li>
                 <li>
-                    <a href="#" className="h-full">
+                    <a href="#pantalones" className="h-full">
                         PANTALONES
                     </a>
                 </li>
                 <li>
-                    <a href="#" className="flex items-center h-full">
+                    <a href="#liquidaciones" className="flex items-center h-full">
                         LIQUIDACIONES
                     </a>
                 </li>

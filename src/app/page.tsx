@@ -56,37 +56,77 @@ export default function Home() {
     fetchProducts();
   }, []);
 
+  // Filtrar productos con categoría definida
+  const productsWithCategory = products.filter(p => !!p.category);
+
+  // 🚀 Sacar categorías únicas
+  const categories = Array.from(new Set(productsWithCategory.map(p => p.category!)));
+
+  // 🚀 Definir orden manual
+  const categoryOrder: Record<string, number> = {
+    "basicos en rib": 1,
+    "basicos en suplex": 2,
+    "chompas y chomperos": 3,
+    "sacos y conjuntos": 4,
+    "pantalones": 5,
+    "liquidaciones": 6,
+  };
+
+  // 🚀 Ordenar categorías según el número
+  const orderedCategories = categories.sort((a, b) => {
+    const orderA = categoryOrder[a.toLowerCase()] ?? 9999;
+    const orderB = categoryOrder[b.toLowerCase()] ?? 9999;
+    return orderA - orderB;
+  });
+
+
   return (
     <div>
       <Header />
-      <main className="bg-[#EFEFEF] py-5 md:py-10">
-        <ul className="grid grid-cols-2 gap-4 mx-2 sm:gap-6 md:grid-cols-3 md:mx-10 lg:grid-cols-4  lg:gap-16 xl:grid-cols-5 justify-items-center">
-          {products.map((p) => (
-            <li key={p.id} className="w-full h-full">
-              <div className="w-full aspect-[3/4] relative overflow-hidden">
-                {p.images?.[0]?.image?.cloudinary?.secure_url && (
-                  <Image
-                    src={p.images[0].image.cloudinary.secure_url}
-                    alt={p.name}
-                    fill
-                    priority={true}
-                    className="object-cover"
-                  />
-                )}
-              </div>
-              <div className={`flex-1 text-xs md:text-sm ${instrumentSans.className}`}>
-                <h2 className="mt-2 mb-1 tracking-widest text-center text-[#1C1C1C]">{p.name.toUpperCase()}</h2>
-                <p className="text-center mb-2 text-[#1C1C1CA6]">S/ {p.price.toFixed(2)}</p>
-                <a href={`https://wa.me/51980947986?text=${encodeURIComponent(
-                  `Hola, estoy interesado en el producto "${p.name}" con precio S/ ${p.price}`
-                )}`} target="_blank" rel="noopener noreferrer" className="flex w-fit items-center justify-center gap-2 bg-[#189D0E] text-white font-semibold py-1 px-2 rounded mx-auto lg:py-2 lg:px-3">
-                  <Image src="/logo-whatsapp.svg" alt="logo de WhatsApp" width={24} height={24} />
-                  Consultar
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <main className="bg-[#EFEFEF] pt-4">
+        {orderedCategories.map((cat) => (
+          <section key={cat} id={cat.toLowerCase().replace(/\s+/g, '-')} className="mb-10">
+            <h2 className="flex py-2 justify-center lg:w-1/4 mx-auto text-center font-bold lg:text-xl mb-5 lg:py-4 bg-white">
+              {cat.toUpperCase()}
+            </h2>
+            <ul className="grid grid-cols-2 gap-4 mx-2 sm:gap-6 md:grid-cols-3 md:mx-10 lg:grid-cols-4 lg:gap-16 xl:grid-cols-5 justify-items-center">
+              {products
+                .filter((p) => p.category === cat) // productos de esa categoría
+                .map((p) => (
+                  <li key={p.id} className="w-full h-full">
+                    <div className="w-full aspect-[3/4] relative overflow-hidden">
+                      {p.images?.[0]?.image?.cloudinary?.secure_url && (
+                        <Image
+                          src={p.images[0].image.cloudinary.secure_url}
+                          alt={p.name}
+                          fill
+                          priority={true}
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
+                    <div className={`flex-1 text-xs md:text-sm ${instrumentSans.className}`}>
+                      <h2 className="mt-2 mb-1 tracking-widest text-center text-[#1C1C1C]">
+                        {p.name.toUpperCase()}
+                      </h2>
+                      <p className="text-center mb-2 text-[#1C1C1CA6]">S/ {p.price.toFixed(2)}</p>
+                      <a
+                        href={`https://wa.me/51980947986?text=${encodeURIComponent(
+                          `Hola, estoy interesado en el producto "${p.name}" con precio S/ ${p.price}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-fit items-center justify-center gap-2 bg-[#189D0E] text-white font-semibold py-1 px-2 rounded mx-auto lg:py-2 lg:px-3"
+                      >
+                        <Image src="/logo-whatsapp.svg" alt="logo de WhatsApp" width={24} height={24} />
+                        Consultar
+                      </a>
+                    </div>
+                  </li>
+                ))}
+            </ul>
+          </section>
+        ))}
       </main>
     </div>
   );
