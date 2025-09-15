@@ -30,6 +30,7 @@ interface Product {
   name: string;
   description: string;
   price: number;
+  category: string;
   images?: {
     image?: Media;
   }[];
