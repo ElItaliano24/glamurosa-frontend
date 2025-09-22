@@ -115,7 +115,7 @@ export default function Home() {
                       </h2>
                       <p className="text-center mb-2 text-[#1C1C1CA6]">S/ {p.price.toFixed(2)}</p>
                       <a
-                        href={`https://wa.me/51980947986?text=${encodeURIComponent(
+                        href={`https://wa.me/51912371128?text=${encodeURIComponent(
                           `Hola, estoy interesado en el producto "${p.name}" con precio S/ ${p.price}`
                         )}`}
                         target="_blank"
