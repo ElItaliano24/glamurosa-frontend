@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <main className="bg-[#EFEFEF] pt-4">
+      <main className="bg-[#EFEFEF] pt-[60px] lg:pt-[64px]">
         {orderedCategories.map((cat) => (
           <section key={cat} id={cat.toLowerCase().replace(/\s+/g, '-')} className="mb-10">
             <h2 className="flex flex-col justify-center lg:w-1/4 mx-auto text-center font-bold lg:text-xl mb-5 lg:py-4 bg-white py-2">

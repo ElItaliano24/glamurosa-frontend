@@ -1,3 +1,4 @@
+"use client";
 import { instrumentSans } from "@/lib/fonts";
 import Hamburger from "hamburger-react";
 import Image from "next/image";
@@ -15,7 +16,7 @@ export default function Header() {
         }
     }, [isOpen]);
     return (
-        <header className="bg-white py-4 h-[54px] flex items-center px-2 relative lg:px-5 lg:h-[60px] xl:px-12 lg:justify-start">
+        <header className="bg-white py-4 h-[54px] flex items-center px-2 fixed w-full z-50 top-0 lg:px-5 lg:h-[60px] xl:px-10 lg:justify-start">
             <div className="lg:hidden">
                 <Hamburger toggled={isOpen} toggle={setOpen} size={24} />
                 {isOpen && (
@@ -61,10 +62,16 @@ export default function Header() {
                                 <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
                             </a>
                         </li>
+                        <li className="h-14 w-full">
+                            <a href="/preguntas-frecuentes" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
+                                PREGUNTAS FRECUENTES
+                                <Image src="right-arrow.svg" alt="Arrow" width={20} height={20} className="mr-5" />
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-lg font-black text-center tracking-wides z-30 lg:text-2xl lg:relative lg:transform-none lg:left-0 lg:translate-x-0" onClick={() => setOpen(false)}>GLAMUROSA</Link>
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-lg font-medium text-center tracking-wider z-30 lg:text-2xl lg:relative lg:transform-none lg:left-0 lg:translate-x-0" onClick={() => setOpen(false)}>GLAMUROSA</Link>
             <ul className={`hidden lg:flex items-center mx-5 gap-2 text-sm xl:tracking-wider xl:text-base xl:space-x-5 xl:ml-10 text-center ${instrumentSans.className}`}>
                 <li>
                     <a href="#basicos-en-rib" className="h-full">
@@ -96,6 +103,7 @@ export default function Header() {
                         LIQUIDACIONES
                     </a>
                 </li>
+                
             </ul>
             <div className="absolute right-1 flex items-center lg:justify-center lg:static lg:ml-auto xl:right-10">
                 <a href="https://www.tiktok.com/@glamurosa.pe" target="_blank" rel="noopener noreferrer">
