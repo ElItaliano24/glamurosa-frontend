@@ -23,7 +23,7 @@ export default function Header() {
                     <div className="fixed left-0 right-0 top-[54px] bottom-0 bg-black/50 z-10" onClick={() => setOpen(false)}>
                     </div>
                 )}
-                <nav className={`fixed top-[54px] left-0 w-4/5 h-full bg-white py-4 transform transition-transform duration-300 ease-in-out z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"} `}>
+                <nav className={`fixed top-[54px] left-0 w-4/5 h-full bg-red-500 py-4 transform transition-transform duration-300 ease-in-out z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"} `}>
                     <ul className={`flex flex-col items-center text-xs tracking-widest divide-y divide-gray-200 ${instrumentSans.className}`}>
                         <li className="h-14 w-full">
                             <a href="#basicos-en-rib" onClick={() => setOpen(false)} className="pl-6 flex justify-between items-center w-full h-full">
