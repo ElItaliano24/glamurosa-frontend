@@ -16,7 +16,7 @@ export default function Header() {
         }
     }, [isOpen]);
     return (
-        <header className="bg-white py-4 h-[54px] flex items-center px-2 fixed w-full z-50 top-0 lg:px-5 lg:h-[60px] xl:px-10 lg:justify-start">
+        <header className="bg-red-500 py-4 h-[54px] flex items-center px-2 fixed w-full z-50 top-0 lg:px-5 lg:h-[60px] xl:px-10 lg:justify-start">
             <div className="lg:hidden">
                 <Hamburger toggled={isOpen} toggle={setOpen} size={24} />
                 {isOpen && (
